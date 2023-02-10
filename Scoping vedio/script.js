@@ -27,4 +27,4 @@ function calAge(birthYear) {
 
 const firstName = 'Jonas';
 console.log(calAge(1991));
-// console.log(age); // reference error (age is not defined.)
+// console.log(age); // reference error (age is not defined.) 
