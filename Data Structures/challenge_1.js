@@ -91,4 +91,4 @@ const printGoals = function (...players) {
 
 // question 7
 game.odds.team1 < game.odds.team2 && console.log('Team 1 is is is more likely to win');
-game.odds.team1 > game.odds.team2 && console.log('Team 2 is more likely to win');
+game.odds.team1 > game.odds.team2  && console.log('Team 2 is more likely to win');
