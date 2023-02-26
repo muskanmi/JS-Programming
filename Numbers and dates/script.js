@@ -144,3 +144,72 @@ console.log(Date.now());
 
 future.setFullYear(2040);
 console.log(future);
+
+// Operations with the dates
+const future2 = new Date(2037, 10, 19, 15, 23);
+console.log(+future2); // return timestamp in miliseconds
+
+const daysPassed = (date1, date2) => (date2 - date1) / (1000 * 60 * 60 * 24);
+const days1 = daysPassed(new Date(2037, 3, 14), new Date(2037, 3, 24));
+console.log(days1);  // will return 10 days 
+
+// Internationalizing dates
+const now2 = new Date();
+const date = new Intl.DateTimeFormat('en-US').format(now2);
+console.log(date); // month/day/year
+const date2 = new Intl.DateTimeFormat('ar-SY').format(now2);
+console.log(date2);  // another format  of Date
+// http://www.lingoes.net/en/translator/langcode.htm (find all code in the world)
+
+const options = {
+    hour: 'numeric',
+    minute: 'numeric',
+};
+const date3 = new Intl.DateTimeFormat('en-US', options).format(now2);
+console.log(date3);// will return only time.
+
+const options2 = {
+    hour: 'numeric',
+    minute: 'numeric',
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    weekday: 'long',
+};
+const date4 = new Intl.DateTimeFormat('en-US', options2).format(now2);
+console.log(date4);  // will return both date and time.
+
+const locale = navigator.language;
+console.log(locale); // will return en-GB
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl 
+// here we will find all types of different functions.
+
+// Internationalizing Numbers(Intl)
+const num2 = 3884764.23;
+
+const options3 = {
+    style: 'currency',
+    unit: 'celsius',
+    currency: 'EUR',
+};
+console.log('US:       ', new Intl.NumberFormat('en-US').format(num2));   // will return 3,884, 764.23 
+console.log('Germany:       ', new Intl.NumberFormat('de-DE').format(num2));   // will return 3.884.764,23 
+console.log('Syria:       ', new Intl.NumberFormat('ar-SY').format(num2));
+console.log(navigator.language , new Intl.NumberFormat(navigator.language, options3).format(num2)); 
+
+//Timers: setTimeout() & setInterval()
+setTimeout(() => console.log('Here is your pizza!')
+, 3000);
+console.log('Waiting...');
+setTimeout((ing1, ing2) => console.log(`Here is your pizza with ${ing1} ${ing2}!`)
+, 3000, 'olives', 'spinach');
+
+const ingredients = ['olives', 'spinach'];
+const pizzaTimer = setTimeout((ing1, ing2) => console.log(`Here is your pizza with ${ing1} and ${ing2}`)
+, 3000, ...ingredients);
+if (ingredients.includes('spinach')) clearTimeout(pizzaTimer);
+
+// setInterval(function() {
+    // const now3 = new Date();
+    // console.log(now3);
+// }, 1000);
