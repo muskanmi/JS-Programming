@@ -66,6 +66,8 @@ const inputClosePin = document.querySelector('.form__input--pin');
 /////////////////////////////////////////////////
 // Functions
 
+
+
 const displayMovements = function (movements, sort = false) {
   containerMovements.innerHTML = '';
 
@@ -169,6 +171,15 @@ const startLogOutTimer = function() {
 ///////////////////////////////////////
 // Event handlers
 let currentAccount, timer;
+
+const now = new Date();
+const day = `${now.getDate()}`.padStart(2, 0);
+const month = now.getMonth() + 1;
+const year = now.getFullYear();
+const hours = now.getHours();
+const min = now.getMinutes();
+labelDate.textContent = `${day}/${month}/${year},
+${hours}:${min}`;
 
 btnLogin.addEventListener('click', function (e) {
   // Prevent form from submitting
