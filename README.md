@@ -1,3 +1,3 @@
-# Js_udemy_code
+# JavaScript Programming
 
-This repository contains jaavscript course by Jonas Schmedtmann.
+This repository contains some sample programs for learning Javascript.
