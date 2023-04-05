@@ -212,6 +212,14 @@ window.addEventListener('scroll', function(e) {
 // h1.addEventListener('mouseenter', function(e) {
 //   alert('addEventListener: Great! You are reading the heading.')
 // })
+// h1.onmouseenter = function(e) {
+//   alert('onmouseenter: Great! You are reading the heading.');
+// }
+// const alertH1 = function (e) {
+//   alert("you are reading the heading.")
+// h1.removeEventListener('mouseenter', alertH1);
+// }
+// h1.addEventListener('mouseenter', alertH1);
 
 // Event propagation practice
 // rgb(255, 255, 255) (random color generator)
@@ -239,3 +247,23 @@ window.addEventListener('scroll', function(e) {
 // });
 
 // DOM traversing
+// const h1 = document.querySelector('h1');
+//Going downwards: child
+// console.log(h1.querySelectorAll('.highlight'));
+// console.log(h1.childNodes); // will return all type of nodes like text comment HTML element
+// console.log(h1.children);
+// h1.firstElementChild.style.color = 'white'; // will give the color white to first child element(span)
+// h1.lastElementChild.style.color = 'orangered';
+
+//Going upwards: parent
+// console.log(h1.parentNode); // will return parent div of h1 element
+// console.log(h1.parentElement); // same output
+// console.log(h1.closest('.header'));
+
+//Going sideways: siblings
+// console.log(h1.previousElementSibling);
+// console.log(h1.nextElementSibling);
+// console.log(h1.previousSibling); // not much important
+// console.log(h1.nextSibling);
+
+// console.log(h1.parentElement.children);
